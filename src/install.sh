@@ -10,7 +10,7 @@ if [ 'Debian' = "$distro" ]; then
   echo "Instaling git via apt: "
   sudo apt install git
   echo "Installing x11 via apt: "
-  sudo apt install xorg
+  sudo apt install xorg libxft-dev
   echo "Fetching dwm, st, dmenu, slstatus..."
   rm -rf $install
   mkdir -p $install
@@ -34,7 +34,7 @@ if [ 'Debian' = "$distro" ]; then
 elif [ 'Archlinux' = "$distro" ]; then
   echo "Arch detected, continuing script..."
   echo "Installing x11 via apt: "
-  sudo pacman -Ss xorg xf86-video
+  sudo pacman -Ss xorg xf86-video libxft
   echo "Fetching dwm, st, dmenu, slstatus..."
   rm -rf $install
   mkdir -p $install
