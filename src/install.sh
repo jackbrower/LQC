@@ -2,7 +2,6 @@
 
 echo "Installing LQC."
 
-# Replace MINT with DEBIAN
 distro=$(grep -oE 'Debian|Archlinux' /etc/issue)
 install="$HOME/.local/src/jackbrower"
 
