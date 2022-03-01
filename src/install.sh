@@ -10,7 +10,7 @@ if [ 'Debian' = "$distro" ]; then
   echo "Instaling git via apt: "
   sudo apt install git
   echo "Installing x11 via apt: "
-  sudo apt install xorg libxft-dev
+  sudo apt install xorg libxft-dev libxinerama-dev libxtst-dev libxcb-xkb-dev libx11-xcb-dev libxcb-res0-dev
   echo "Fetching dwm, st, dmenu, slstatus..."
   rm -rf $install
   mkdir -p $install
@@ -29,12 +29,12 @@ if [ 'Debian' = "$distro" ]; then
   sudo make clean install
   echo "Configuring .xinitrc..."
   rm -f $HOME/.xinitrc
-  echo -e "dmenu &\n slstatus &\n exec dwm" > $HOME/.xinitrc
+  echo "dmenu &\n slstatus &\n exec dwm" > $HOME/.xinitrc
   exec startx
 elif [ 'Archlinux' = "$distro" ]; then
   echo "Arch detected, continuing script..."
   echo "Installing x11 via apt: "
-  sudo pacman -Ss xorg xf86-video libxft
+  sudo pacman -Ss xorg xf86-video libxft libxinerama libxtst libxcb
   echo "Fetching dwm, st, dmenu, slstatus..."
   rm -rf $install
   mkdir -p $install
