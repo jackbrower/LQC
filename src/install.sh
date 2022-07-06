@@ -3,7 +3,7 @@
 echo "Installing LQC."
 
 distro=$(grep -oE 'Debian|Archlinux' /etc/issue)
-install="$HOME/.local/src/jackbrower"
+install="$HOME/.local/src/lqc"
 
 if [ 'Debian' = "$distro" ]; then
   echo "Debian detected, continuing script..."
